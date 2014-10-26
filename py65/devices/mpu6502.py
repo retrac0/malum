@@ -1,6 +1,3 @@
-# MPU6502 is borrowed unmodified from py65 by Mike Naberezny, released
-# under the 3-clause BSD license
-
 from py65.utils.conversions import itoa
 from py65.utils.devices import make_instruction_decorator
 
