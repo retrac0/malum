@@ -18,21 +18,21 @@ class PIA6821(threading.Thread):
         self.terminal = terminal
 
     def dsp_read(self, addr):
-#        print("dsp read")
-        return 0x0
+        if self.terminal.dspready == True:
+            return 0x80
+        else:
+            return 0x00
 
     def dsp_write(self, addr, val):
 #        print("dsp write :", hex(val & 0x7f))
-        self.terminal.dspready = False
         self.terminal.terminalprint(val)
-        time.sleep(0.0166)
         return
 
     def dspcr_read(self, addr):
-        return
+        return 0x00
 
     def dspcr_write(self, addr, val):
-        return
+        return 0x00
     
     def kbd_read(self, addr):
         if self.terminal.char == None:

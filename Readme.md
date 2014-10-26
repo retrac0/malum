@@ -1,14 +1,14 @@
-Malum - An Apple 1 Emulator
----------------------------
+Malum - Apple 1 Emulator
+------------------------
 
 Malum is a simple Apple 1 emulator in Python, using the py65 CPU core
 written by Mike Naberezny.
 
-At present, it emulates an Apple 1 with 4 KB of RAM at 0, 4 KB Integer BASIC ROM at E000, and the 256 B Woz monitor at 0xFF00.
+At present, it emulates an Apple 1 with 4 KB of RAM at 0 and the Woz monitor at 0xFF00, or a Replica 1 with 32 KB of RAM, 8 KB of ROM including Integer BASIC at E000, Krusader assembler at F000 and the Woz monitor at FF00
 
 To run:
 
-    python Malum.py
+    python Malum.py -m replica1
 
 Control-E is reset, control-C exits.  \ is the Woz monitor reset prompt.  You can read more about the Woz monitor at http://sbprojects.com/projects/apple1/wozmon.php
 
