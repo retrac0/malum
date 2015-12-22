@@ -59,5 +59,7 @@ pia = PIA6821.PIA6821(decoder, terminal)
 termthread = threading.Thread(target=terminal.run)
 procthread = threading.Thread(target=processor.run)
 
+procthread.daemon = True
+
 termthread.start()
 procthread.start()
