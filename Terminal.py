@@ -3,13 +3,14 @@ import Getch
 
 import sys
 import time
+import queue
 
 # courtesy https://stackoverflow.com/questions/510357/python-read-a-single-character-from-the-user
 
 class Terminal(threading.Thread):
     def __init__(self, p):
         self.processor = p
-        self.char = None
+        self.charQueue = queue.Queue()
         self.kbdready = False
         self.dspready = True
 
@@ -40,11 +41,10 @@ class Terminal(threading.Thread):
     def run (self):
         while (1):
             c = Getch.getch()
-#           print("getch: ", hex(self.char))
             self.kbdready = True
             if c == chr(0x05):      # ^E
                 self.processor.reset = True
             if c == chr(0x03):      # ^C
                 print("Exiting")
                 sys.exit()
-            self.char = self.toApple1(c)
+            self.charQueue.put_nowait(self.toApple1(c))

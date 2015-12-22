@@ -35,11 +35,13 @@ class PIA6821(threading.Thread):
         return 0x00
     
     def kbd_read(self, addr):
-        if self.terminal.char == None:
+        if self.terminal.charQueue.empty():
             return 0x80
         else:
-            self.terminal.kbdready = False
-            return self.terminal.char
+            c = self.terminal.charQueue.get()
+            if (self.terminal.charQueue.empty()):
+                self.terminal.kbdready = False
+            return c
 
     def kbd_write(self, addr, val):
         return
