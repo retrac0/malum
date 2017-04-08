@@ -35,7 +35,7 @@ class Terminal(threading.Thread):
         if val == '\r':
             sys.stdout.write('\n')
         sys.stdout.flush()
-        time.sleep(0.0166)
+#        time.sleep(0.0166)
 
 
     def run (self):

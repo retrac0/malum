@@ -1,7 +1,9 @@
-import py65.devices.mpu6502
+import py65.py65.devices.mpu6502
 
 import threading
 import time
+
+# this is just a simple wrapper for the py65 library
 
 class Processor:
     def __init__(self, d):
