@@ -1,4 +1,4 @@
-import py65.py65.devices.mpu6502
+import py65.devices.mpu6502
 
 import threading
 import time

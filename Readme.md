@@ -1,8 +1,12 @@
 Malum - Apple 1 Emulator
 ------------------------
 
-Malum is a simple Apple 1 emulator in Python, using the py65 CPU core
-written by Mike Naberezny.
+Malum is a simple Apple 1 emulator in Python.
+
+It requires the py65.  It can either be on the system path or in the current directory.  It can be installed with the Python package manager pip or can be found at https://github.com/mnaberez/py65 and cloned with git.  For example: 
+
+    % git clone https://github.com/mnaberez/py65.git py65.git
+    % cp -a py65.git/py65 . 
 
 At present, it emulates an Apple 1 with 4 KB of RAM at 0 and the Woz monitor at 0xFF00, or a Replica 1 with 32 KB of RAM, 8 KB of ROM including Integer BASIC at E000, Krusader assembler at F000 and the Woz monitor at FF00
 
